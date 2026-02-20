@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:09:27 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/02/20 17:14:21 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/02/20 17:22:31 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
-Animal::Animal() : type_("Animal") {}
+Dog::Dog() : Animal() { type_ = "Dog"; }
 
-Animal::Animal(const std::string& type) : type_(type) {}
 
-Animal::Animal(const Animal& other) : type_(other.type_) {}
+Dog::Dog(const Dog& other) : Animal(other) {}
 
-Animal&	Animal::operator=(const Animal& other)
+Dog&	Dog::operator=(const Dog& other)
 {
 	if (this != &other)
-		this->type_ = other.type_;
+		Animal::operator=(other);
 	return (*this);
 }
 
-const std::string&	Animal::getType(void) const
+void	Dog::makeSound(void) const
 {
-	return(type_);
+	std::cout << "'Guau' 'guau' 'guau'" << std::endl;
 }
 
-void	Animal::makeSound(void) const
-{
-	std::cout << "Animal makes undefined sound" << std::endl;
-}
-
-Animal::~Animal() {}
+Dog::~Dog() {}

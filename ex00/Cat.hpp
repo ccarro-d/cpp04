@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 18:57:17 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/02/20 17:00:49 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/02/20 17:03:39 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include <string>
-#include <iostream>
+#include "Animal.hpp"
 
-class Animal {
-	protected:
-		std::string	type_;
-
+class Cat: public Animal {
 	public:
-		Animal(void);
-		Animal(const std::string& type);
-		Animal(const Animal& other);
-		virtual ~Animal();
+		Cat(void);
+		Cat(const std::string& type);
+		Cat(const Cat& other);
+		virtual ~Cat(); // Es virtual, lo indiquemos o no, porque eso se establece en la clase base
 
-		Animal&	operator=(const Animal& other);
+		Cat&	operator=(const Cat& other);
 
-		const std::string&	getType(void) const;
-		virtual void	makeSound(void) const;
+		virtual void	makeSound(void) const; // Es virtual, lo indiquemos o no, porque eso se establece en la clase base y luego solo tienen que coincidir las firmas de las funciones
 };
 
 #endif
