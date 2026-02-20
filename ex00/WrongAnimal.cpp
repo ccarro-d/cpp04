@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:09:27 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/02/20 19:13:23 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/02/20 19:12:39 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 Animal::Animal() : type_("Animal") {}
 
-Animal::~Animal() {}
-
 Animal::Animal(const Animal& other) : type_(other.type_) {}
+
+Animal::~Animal() {}
 
 Animal&	Animal::operator=(const Animal& other)
 {

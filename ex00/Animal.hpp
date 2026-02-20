@@ -6,7 +6,7 @@
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 18:57:17 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/02/20 17:00:49 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/02/20 18:07:12 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Animal {
 
 	public:
 		Animal(void);
-		Animal(const std::string& type);
 		Animal(const Animal& other);
 		virtual ~Animal();
 

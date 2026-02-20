@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/16 19:09:27 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/02/20 19:13:40 by ccarro-d         ###   ########.fr       */
+/*   Created: 2026/02/16 18:57:17 by ccarro-d          #+#    #+#             */
+/*   Updated: 2026/02/20 18:06:49 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-Dog::Dog() : Animal() { type_ = "Dog"; }
+#include "Animal.hpp"
 
-Dog::Dog(const Dog& other) : Animal(other) {}
+class Cat: public Animal {
+	public:
+		Cat(void);
+		Cat(const Cat& other);
+		~Cat();
 
-Dog::~Dog() {}
+		Cat&	operator=(const Cat& other);
 
-Dog&	Dog::operator=(const Dog& other)
-{
-	if (this != &other)
-		Animal::operator=(other);
-	return (*this);
-}
+		void	makeSound(void) const;
+};
 
-void	Dog::makeSound(void) const
-{
-	std::cout << "'Guau' 'guau' 'guau'" << std::endl;
-}
+#endif
