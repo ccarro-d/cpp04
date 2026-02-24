@@ -1,13 +1,13 @@
 
-NAME        = animals
-## Para ver leaks en Mac: valgrind --leak-check=full ./animals
-## Para ver leaks en Mac: leaks --atExit -- ./animals
+NAME        = interface
+## Para ver leaks en Mac: valgrind --leak-check=full ./interface
+## Para ver leaks en Mac: leaks --atExit -- ./interface
 
 CXX         = c++
 CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 #-Wshadow -Wno-shadow
 DEPFLAGS    = -MMD -MP
 
-SRC         = main.cpp AAnimal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC         = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
 OBJDIR      = obj
 OBJ         = $(addprefix $(OBJDIR)/,$(SRC:.cpp=.o))

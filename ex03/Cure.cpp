@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 01:00:38 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/02/24 18:53:41 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:43:49 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Cure.hpp"
+#include <iostream>
+#include "ICharacter.hpp" // se añade porque el forwad declaration en AMateria.hpp no sirve aquí
+// Lo incluimos aquí mejor y no en Ice.hpp porque aquí llamamos al método de ICharacter
 
-AMateria::AMateria() : type_("undefined") {}
+Cure::Cure() : AMateria("cure") {}
 
-AMateria::AMateria(const std::string& type) : type_(type) {}
+Cure::Cure(const Cure& other) : AMateria(other) {}
 
-AMateria::AMateria(const AMateria& other)
+Cure::~Cure() {}
+
+Cure&	Cure::operator=(const Cure& other)
 {
-	*this = other;
-}
-
-AMateria::~AMateria() {}
-
-AMateria&	AMateria::operator=(const AMateria& other)
-{
-	if (this != &other)
-		type_ = other.type_;
+	(void)other;
 	return (*this);
 }
 
-const std::string&	AMateria::getType() const
+Cure*	Cure::clone() const
 {
-	return (type_);
+	Cure	*cloned = new Cure(*this);
+	return (cloned);
 }
 
-void	AMateria::use(ICharacter& target)
+void	Cure::use(ICharacter& target)
 {
-	(void)target;
+	std::cout << "* heals " << target.getName()  << "'s wounds *" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 00:45:19 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/02/23 01:22:00 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:42:33 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class Ice : public AMateria {
 	public:
 		Ice();
-		Ice(const std::string& type);
 		Ice(const Ice& other);
 		~Ice();
 		Ice&	operator=(const Ice& other);

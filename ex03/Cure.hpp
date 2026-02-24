@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 00:45:19 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/02/24 18:39:50 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:42:38 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#ifndef CURE_HPP
+#define CURE_HPP
 
 #include <string>
+#include "AMateria.hpp"
 
-class ICharacter; // forward declaration para no poner #include "ICharacter.hpp" ya que crearía una dependencia circular (ICharacter.hpp incluye AMateria.hpp)
-
-class AMateria
-{
-	protected:
-		std::string	type_;
+class Cure : public AMateria {
 	public:
-		AMateria();
-		AMateria(const std::string& type);
-		AMateria(const AMateria& other);
-		virtual ~AMateria();
-		AMateria&	operator=(const AMateria& other);
+		Cure();
+		Cure(const Cure& other);
+		~Cure();
+		Cure&	operator=(const Cure& other);
 
 		
-		const std::string&	getType() const; //Returns the materia type
-		virtual AMateria*	clone() const = 0;
+		virtual Cure*		clone() const;
 		virtual void		use(ICharacter& target);
 };
 

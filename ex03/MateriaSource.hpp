@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccarro-d <ccarro-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 00:52:05 by ccarro-d          #+#    #+#             */
-/*   Updated: 2026/02/24 18:34:14 by ccarro-d         ###   ########.fr       */
+/*   Updated: 2026/02/23 22:27:52 by ccarro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-#define IMATERIASOURCE_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include "AMateria.hpp" // Se podría hacer también una forward declaration: class AMateria;
+#include "IMateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
-class IMateriaSource
+class MateriaSource : public IMateriaSource
 {
+	private:
+		static const int	maxMateriasToLearn = 4; // static const para que no se queje
+		AMateria *learnedMaterias[maxMateriasToLearn];
 	public:
-	virtual				~IMateriaSource() {}
-	virtual void 		learnMateria(AMateria*) = 0;
-	virtual AMateria*	createMateria(std::string const & type) = 0;
+		MateriaSource();
+		MateriaSource(const MateriaSource& other);
+		~MateriaSource();
+
+		MateriaSource& operator=(const MateriaSource& other);
+		
+		virtual void 		learnMateria(AMateria* toLearn);
+		virtual AMateria*	createMateria(std::string const & type);
 };
 
 #endif
